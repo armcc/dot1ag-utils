@@ -39,7 +39,6 @@
 #include <string.h>
 #include <sys/socket.h>
 #include <net/if.h>
-#include <net/if_packet.h>
 #include <time.h>
 
 #include <sys/ioctl.h>

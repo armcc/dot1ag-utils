@@ -47,7 +47,6 @@
 #include "oam_db.h"
 #include <netinet/ether.h>
 #include <net/if.h>
-#include <net/if_packet.h>
 #include <sys/ioctl.h>
 
 /*FUTURE_DEVELOPMENT:  -increase TxFCl when successive transmit a ETH-SLM request message;
