@@ -1,5 +1,5 @@
-CFLAGS += -Wall -Werror -ggdb -I./Y1731/src
-LDFLAGS +=
+AM_CFLAGS = -Wall -Werror -ggdb -I./Y1731/src
+AM_LDFLAGS =
 
 bin_PROGRAMS = ethping ethtrace dot1agd dot1ag_ccd
 
