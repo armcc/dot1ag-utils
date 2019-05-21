@@ -412,7 +412,8 @@ usage() {
                         -a ma_name\n \
                         -p operation_mode(0:1)\n");
 #ifdef L2VPN_SUPPORT
-    fprintf(stderr, "\  -f sf_index_filter_list (for DOCSIS L2VPN mode)\n \
+    fprintf(stderr, " \
+                        -f sf_index_filter_list (for DOCSIS L2VPN mode)\n \
                         -u upstream_service_flow_index (for DOCSIS L2VPN mode)\n");
 #endif
     exit(EXIT_FAILURE);
