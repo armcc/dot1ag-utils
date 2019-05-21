@@ -484,7 +484,7 @@ cfm_ccm_receiver(char *ifname, const u_char *buf, uint16_t vlan, int verbose) {
             break;
         }
         /* copy MD Name to buffer, ensuring trailing '\0' */
-        strncpy(mdnamebuf, (char *) md_namep, mdnl);
+        memcpy(mdnamebuf, (char *) md_namep, mdnl);
 
         if (verbose) {
             fprintf(stderr, ", MD \"%s\"", mdnamebuf);
