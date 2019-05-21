@@ -62,6 +62,30 @@
 /*FUTURE_DEVELOPMENT: replace bug report from printf to a debug tool, which can be turned on and off via CLI */
 #define ETH_P_CFM   0x8902
 
+/*
+ *  TI Extension:
+ *   Data structure for passing auxilliary data for layer 2 packets
+ */
+#ifdef CONFIG_TI_AUXDATA_SOCKOPT
+
+#ifndef TI_AUXDATA
+#define TI_AUXDATA     24
+#endif
+
+#ifndef TI_AUXDATA_STRUCT
+#define TI_AUXDATA_STRUCT
+struct ti_auxdata
+{
+#ifdef CONFIG_TI_META_DATA
+    int ti_meta_info;
+    int ti_meta_info2;
+#endif
+};
+#endif
+
+#endif
+
+
 /***************************/
 /*    global variable      */
 /***************************/
