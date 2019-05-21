@@ -237,7 +237,7 @@ get_local_mac(char *dev, uint8_t *ea) {
 
     /* get interface index */
     memset(&req, 0, sizeof(req));
-    strncpy(req.ifr_name, dev, sizeof(req.ifr_name));
+    strncpy(req.ifr_name, dev, sizeof(req.ifr_name) - 1);
 
     /* get MAC address of interface */
     if (ioctl(s, SIOCGIFHWADDR, &req)) {
@@ -304,7 +304,7 @@ send_packet(char *ifname, uint8_t *buf, int size) {
 
     /* get interface index */
     memset(&req, 0, sizeof(req));
-    strncpy(req.ifr_name, ifname, sizeof(req.ifr_name));
+    strncpy(req.ifr_name, ifname, sizeof(req.ifr_name) - 1);
     if (ioctl(sockFD, SIOCGIFINDEX, &req)) {
         perror(ifname);
         return 0;
@@ -1479,7 +1479,7 @@ int open_listen_socket_raw(int* sockFD, char *ifname) {
     }
 #endif
 
-    strncpy(ifopts.ifr_name, ifname, sizeof(ifopts.ifr_name));
+    strncpy(ifopts.ifr_name, ifname, sizeof(ifopts.ifr_name) - 1);
     ioctl(*sockFD, SIOCGIFFLAGS, &ifopts);
     /* find the interface index */
     if (-1 == ioctl(*sockFD, SIOCGIFINDEX, &ifopts)) {
