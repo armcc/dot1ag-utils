@@ -4,5 +4,8 @@ Makefile.in
 /configure
 /aclocal.m4
 /autom4te.cache
+/compile
+/install-sh
+/missing
 /stamp-h1
 
